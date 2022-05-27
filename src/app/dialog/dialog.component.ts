@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { HotToastService } from '@ngneat/hot-toast';
 import { INote } from '../app.component';
 import { ApiService } from '../services/api.service';
 
@@ -16,7 +17,8 @@ export class DialogComponent implements OnInit {
     private formBuilder: FormBuilder,
     private api: ApiService,
     private matDialogRef: MatDialogRef<DialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public editData: INote
+    @Inject(MAT_DIALOG_DATA) public editData: INote,
+    private toast: HotToastService,
   ) {}
 
   ngOnInit(): void {
@@ -37,12 +39,12 @@ export class DialogComponent implements OnInit {
   updateNote() {
     this.api.putNote(this.noteForm.value, this.editData.id).subscribe({
       next: (response) => {
-        alert('Note updated!');
+        this.toast.success("Note updated sucessfully!");
         this.noteForm.reset();
         this.matDialogRef.close();
       },
       error: (error) => {
-        alert(`${error} Occured!`);
+        this.toast.error("Error occured while updating a note!");
         console.log(error);
       },
     });
@@ -59,10 +61,11 @@ export class DialogComponent implements OnInit {
           next: (response) => {
             this.noteForm.reset();
             this.matDialogRef.close();
-            alert('Note Added!');
+            this.toast.success("Note Added sucessfully!");
+
           },
           error: (error) => {
-            alert(`${error} occured!`);
+            this.toast.error("Error occured while adding a note!");
           },
         });
       }

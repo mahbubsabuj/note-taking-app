@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { DialogComponent } from './dialog/dialog.component';
 import { ApiService } from './services/api.service';
+import { HotToastService } from '@ngneat/hot-toast';
 
 export interface INote {
   id: number;
@@ -19,7 +20,7 @@ export interface INote {
 export class AppComponent implements OnInit {
   title: string = 'note-taking-app';
   noteList: INote[] = [];
-  constructor(private dialog: MatDialog, private api: ApiService) {}
+  constructor(private dialog: MatDialog, private api: ApiService, private toast: HotToastService) {}
 
   ngOnInit(): void {
     this.getAllNote();
@@ -68,11 +69,11 @@ export class AppComponent implements OnInit {
   deleteNote(id: number) {
     this.api.deleteNote(id).subscribe({
       next: (response) => {
-        alert("Note deleted sucessfully!");
+        this.toast.success("Note deleted sucessfully!");
         this.getAllNote();
       },
       error: (error) => {
-        alert("Error Occured while removing a note!")
+        this.toast.error("Error Occured while removing a note!");
       }
     });
   }

@@ -14,6 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
+import { HotToastModule } from '@ngneat/hot-toast';
 
 @NgModule({
   declarations: [AppComponent, DialogComponent],
@@ -31,6 +32,7 @@ import { MatCardModule } from '@angular/material/card';
     HttpClientModule,
     MatGridListModule,
     MatCardModule,
+    HotToastModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
