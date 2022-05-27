@@ -1,25 +1,11 @@
 {
   "noteList": [
     {
-      "title": "you should wait more",
+      "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
       "color": "purple",
-      "date": "2022-05-27T11:13:15.725Z",
-      "description": "something is valuable then nothing",
+      "date": "2022-05-27T15:02:55.945Z",
+      "description": "quia et suscipit\\nsuscipit recusandae consequuntur expedita et cum\\nreprehenderit molestiae ut ut quas totam\\nnostrum rerum est autem sunt rem eveniet architecto",
       "id": 1
-    },
-    {
-      "title": "test title",
-      "color": "purple",
-      "date": "2022-05-27T11:18:56.470Z",
-      "description": "test description",
-      "id": 2
-    },
-    {
-      "title": "title",
-      "color": "white",
-      "date": "2022-05-27T11:19:28.020Z",
-      "description": "description",
-      "id": 3
     }
   ]
 }
