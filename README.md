@@ -2,8 +2,8 @@
 
 An Angular Note taking app with a fake json backend. 
 
-# Feature:
+# Feature: 
 
 <ul>
-<li>Basic CRUD</li>
+<li>Basic CRUD </li>
 </ul>
