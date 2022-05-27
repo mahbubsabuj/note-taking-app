@@ -1,0 +1,32 @@
+.form-field {
+  width: 100%;
+}
+
+.center-span {
+    align-items: center;
+    justify-content: center;
+}
+
+.circle-dot-white {
+  height: 20px;
+  width: 20px;
+  border-radius: 100%;
+  background-color: white;
+  display: inline-block;
+}
+
+.circle-dot-purple {
+  height: 20px;
+  width: 20px;
+  border-radius: 100%;
+  background-color: purple;
+  display: inline-block;
+}
+
+.circle-dot-green {
+  height: 20px;
+  width: 20px;
+  border-radius: 100%;
+  background-color: green;
+  display: inline-block;
+}
