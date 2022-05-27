@@ -2,6 +2,10 @@
   width: 100%;
 }
 
+.mat-form-field {
+  width: 100%;
+}
+
 .center-span {
     align-items: center;
     justify-content: center;

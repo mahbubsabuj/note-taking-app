@@ -1,37 +1,56 @@
 <h1 mat-dialog-title>Add Note</h1>
-<div mat-dialog-content>
-  <mat-form-field class="form-field" appearance="fill">
-    <mat-label>Title</mat-label>
-    <input matInput #message maxlength="256" placeholder="" />
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>Color</mat-label>
-    <mat-select name="color">
-      <mat-option value="white">
-        <div>
-          <span class="circle-dot-white center-span"></span>
-          &nbsp;
-          <span class="center-span">White</span>
-        </div>
-      </mat-option>
-      <mat-option value="purple">
-        <div>
-          <span class="circle-dot-purple center-span"></span>
-          &nbsp;
-          <span class="center-span">Purple</span>
-        </div>
-      </mat-option>
-      <mat-option value="green">
-        <div>
-          <span class="circle-dot-green center-span"></span>
-          &nbsp;
-          <span class="center-span">Green</span>
-        </div>
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-  <mat-form-field class="form-field" appearance="fill">
-    <mat-label>Title</mat-label>
-    <input matInput #message maxlength="256" placeholder="" />
-  </mat-form-field>
-</div>
+<form [formGroup]="noteForm">
+  <div mat-dialog-content>
+    <mat-form-field class="form-field" appearance="fill">
+      <mat-label>Title</mat-label>
+      <input formControlName="title" matInput placeholder="" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Color</mat-label>
+      <mat-select formControlName="color" name="color">
+        <mat-option value="white">
+          <div>
+            <span class="circle-dot-white center-span"></span>
+            &nbsp;
+            <span class="center-span">White</span>
+          </div>
+        </mat-option>
+        <mat-option value="purple">
+          <div>
+            <span class="circle-dot-purple center-span"></span>
+            &nbsp;
+            <span class="center-span">Purple</span>
+          </div>
+        </mat-option>
+        <mat-option value="green">
+          <div>
+            <span class="circle-dot-green center-span"></span>
+            &nbsp;
+            <span class="center-span">Green</span>
+          </div>
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Description</mat-label>
+      <textarea
+        formControlName="description"
+        matInput
+        placeholder=""
+      ></textarea>
+    </mat-form-field>
+  </div>
+  <div mat-dialog-action align="end">
+    <button
+      style="margin-right: 8px"
+      mat-raised-button
+      color="primary"
+      (click)="addNote()"
+    >
+      Save
+    </button>
+    <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+  </div>
+</form>
+
+
